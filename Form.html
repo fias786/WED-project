@@ -1,0 +1,713 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="CSS.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="CSS2.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="CSS3.css">
+    <script type="text/javascript" src="Scripts/validation/Validation.js"></script>
+    <script type="text/javascript" src="Scripts/validation/RegEX.js"></script>
+    <script type="text/javascript" src="Scripts/validation/FunctionValidator.js"></script>
+    <script type="text/javascript">
+
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+
+    </script>
+    <style type="text/css">
+        body#LoginForm {
+            /*background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABZ0RVh0Q3JlYXRpb24gVGltZQAxMC8yOS8xMiKqq3kAAAAcdEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzVxteM2AAABHklEQVRIib2Vyw6EIAxFW5idr///Qx9sfG3pLEyJ3tAwi5EmBqRo7vHawiEEERHS6x7MTMxMVv6+z3tPMUYSkfTM/R0fEaG2bbMv+Gc4nZzn+dN4HAcREa3r+hi3bcuu68jLskhVIlW073tWaYlQ9+F9IpqmSfq+fwskhdO/AwmUTJXrOuaRQNeRkOd5lq7rXmS5InmERKoER/QMvUAPlZDHcZRhGN4CSeGY+aHMqgcks5RrHv/eeh455x5KrMq2yHQdibDO6ncG/KZWL7M8xDyS1/MIO0NJqdULLS81X6/X6aR0nqBSJcPeZnlZrzN477NKURn2Nus8sjzmEII0TfMiyxUuxphVWjpJkbx0btUnshRihVv70Bv8ItXq6Asoi/ZiCbU6YgAAAABJRU5ErkJggg==);*/
+            background-color: #605ca8;
+        }
+
+
+        .form-heading {
+            color: #fff;
+            font-size: 23px;
+        }
+
+        .panel h2 {
+            color: #444444;
+            font-size: 18px;
+            margin: 0 0 8px 0;
+        }
+
+        .panel p {
+            color: #777777;
+            font-size: 14px;
+            margin-bottom: 30px;
+            line-height: 24px;
+        }
+
+        .login-form .form-control {
+            background: #f7f7f7 none repeat scroll 0 0;
+            border: 1px solid #d4d4d4;
+            border-radius: 4px;
+            font-size: 14px;
+            height: 50px;
+            line-height: 50px;
+            border-radius: 0;
+        }
+
+        .main-div {
+            background: #ffffff none repeat scroll 0 0;
+            border-radius: 2px;
+            margin: 3% auto 30px;
+            max-width: 38%;
+            padding: 20px 70px 15px 71px;
+            box-shadow: 0px 0px 9px 2px rgba(0, 0, 0, 0.40);
+        }
+
+        .login-form .form-group {
+            margin-bottom: 10px;
+        }
+
+        .login-form {
+            text-align: center;
+        }
+
+        .forgot a {
+            color: #777777;
+            font-size: 14px;
+            text-decoration: underline;
+        }
+
+        .login-form .btn.btn-primary {
+            background: #3d9970 none repeat scroll 0 0;
+            border-color: #3d9970;
+            color: #ffffff;
+            font-size: 14px;
+            width: 100%;
+            height: 50px;
+            border-radius: 0;
+            line-height: 50px;
+            padding: 0;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .forgot {
+            text-align: left;
+            margin-bottom: 30px;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        .botto-text {
+            color: #ffffff;
+            font-size: 14px;
+            margin: auto;
+        }
+
+        .login-form .btn.btn-primary.reset {
+            background: #ff9900 none repeat scroll 0 0;
+        }
+
+        .back {
+            text-align: left;
+            margin-top: 10px;
+        }
+
+            .back a {
+                color: #444444;
+                font-size: 13px;
+                text-decoration: none;
+            }
+
+        header {
+            width: 100%;
+            height: 80px;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            background-color: #0683c9;
+            -webkit-transition: height 0.3s;
+            -moz-transition: height 0.3s;
+            -ms-transition: height 0.3s;
+            -o-transition: height 0.3s;
+            transition: height 0.3s;
+        }
+
+            header h1#logo {
+                display: inline-block;
+                height: 150px;
+                line-height: 150px;
+                float: left;
+                font-family: "Oswald", sans-serif;
+                font-size: 60px;
+                color: white;
+                font-weight: 400;
+                -webkit-transition: all 0.3s;
+                -moz-transition: all 0.3s;
+                -ms-transition: all 0.3s;
+                -o-transition: all 0.3s;
+                transition: all 0.3s;
+            }
+
+            header nav {
+                display: inline-block;
+                float: right;
+            }
+
+                header nav a {
+                    line-height: 150px;
+                    margin-left: 20px;
+                    color: #9fdbfc;
+                    font-weight: 700;
+                    font-size: 18px;
+                    -webkit-transition: all 0.3s;
+                    -moz-transition: all 0.3s;
+                    -ms-transition: all 0.3s;
+                    -o-transition: all 0.3s;
+                    transition: all 0.3s;
+                }
+
+                    header nav a:hover {
+                        color: white;
+                    }
+
+            header.smaller {
+                height: 75px;
+            }
+
+                header.smaller h1#logo {
+                    width: 150px;
+                    height: 75px;
+                    line-height: 75px;
+                    font-size: 30px;
+                }
+
+                header.smaller nav a {
+                    line-height: 75px;
+                }
+
+        .logo {
+            display: block;
+            width: 45%;
+            text-align: center;
+            margin: 0 auto;
+            margin-left: 0%;
+            margin-top: 1%;
+        }
+
+        .footer {
+            bottom: 0;
+            position: fixed;
+            background: #2f2f2f;
+            display: block;
+            width: 100%;
+            padding: 8px;
+        }
+
+            .footer strong {
+                color: white;
+                font-size: 12px;
+                /* padding: 2%; */
+                display: block;
+                text-align: center;
+                width: 100%;
+                margin: 0 auto;
+            }
+
+        .main-div .panel img {
+            width: auto;
+            height: 80px;
+            margin-bottom: 15px;
+        }
+
+        .error-msg {
+            display: block;
+            color: red;
+            font-size: 11px;
+            width: 100%;
+            text-align: center;
+        }
+
+        html {
+            box-shadow: inset 1px 1px 150px rgba(0,0,0,0.3);
+            height: 100%;
+        }
+
+        @media (min-width: 320px) and (max-width: 480px) {
+            .main-div {
+                background: #ffffff none repeat scroll 0 0;
+                border-radius: 2px;
+                margin: 5% auto 30px;
+                max-width: 90%;
+                padding: 20px 50px 30px 50px;
+                box-shadow: 0px 0px 9px 2px rgba(0, 0, 0, 0.40);
+            }
+
+                .main-div .panel img {
+                    width: auto;
+                    height: 60px;
+                    margin-bottom: 15px;
+                }
+
+            .panel h2 {
+                color: #444444;
+                font-size: 15px;
+                margin: 0 0 8px 0;
+            }
+
+            .panel p {
+                color: #777777;
+                font-size: 11px;
+                margin-bottom: 25px;
+                line-height: 8px;
+            }
+
+            .login-form .form-control {
+                background: #f7f7f7 none repeat scroll 0 0;
+                border: 1px solid #d4d4d4;
+                border-radius: 4px;
+                font-size: 14px;
+                height: 40px;
+                line-height: 50px;
+                border-radius: 0;
+            }
+
+            .forgot {
+                text-align: left;
+                margin-bottom: 15px;
+                text-align: center;
+                margin-top: 5px;
+            }
+
+                .forgot a {
+                    color: #777777;
+                    font-size: 12px;
+                    text-decoration: underline;
+                }
+
+            .error-msg {
+                display: block;
+                color: red;
+                font-size: 11px;
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        .modal-header {
+            text-align: left;
+            background: #273146;
+            color: white;
+            padding: 15px 24px !important;
+        }
+
+        .close {
+            float: right;
+            font-size: 21px;
+            font-weight: 700;
+            line-height: 1;
+            color: #000;
+            text-shadow: 0 1px 0 #fff;
+            filter: alpha(opacity=20);
+            opacity: 0.7;
+        }
+
+        .modalBackground {
+            background-color: rgba(0,0,0,0.7);
+            z-index: 999999 !important;
+        }
+
+        .modalPopup {
+            height: auto;
+            width: 35%;
+        }
+
+        .modal-body {
+            position: relative;
+            padding: 15px 50px;
+            text-align: left;
+        }
+
+        #lblOTPMSG {
+            font-size: 14px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .modal-footer {
+            border-top: 1px solid #e5e5e5 !important;
+        }
+
+        .close {
+            position: absolute;
+            right: 4%;
+        }
+
+        .modal-title {
+            margin-bottom: 0;
+            line-height: 1.5;
+            display: block;
+            float: left;
+            width: 100%;
+            font-size: 20px;
+        }
+
+        .modal-body .form-control {
+            background: #f7f7f7 none repeat scroll 0 0;
+            border: 1px solid #d4d4d4;
+            border-radius: 4px;
+            font-size: 14px;
+            height: 50px;
+            line-height: 50px;
+            border-radius: 0;
+        }
+
+        .modal-btn {
+            padding: 5px 20px;
+            font-size: 12px;
+            border: none;
+            border-radius: 2px;
+            position: relative;
+            padding: 8px 30px;
+            margin: 10px 1px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            will-change: box-shadow,transform;
+            -webkit-transition: -webkit-box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1);
+            -o-transition: box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1);
+            transition: box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            background-color: #3d9970 !important;
+            background: 0 0;
+            color: white !important;
+        }
+
+            .modal-btn:hover {
+                text-decoration: none !important;
+                color: white !important;
+            }
+
+        .captcha-btn {
+            position: absolute;
+            left: -5%;
+            top: 22%;
+        }
+
+        .btn-back {
+            color: white;
+            text-decoration: none;
+            /* margin: 2%; */
+            position: absolute;
+            top: 2%;
+            right: 1%;
+        }
+
+            .btn-back:hover {
+                color: #E8E8E8 !important;
+                text-decoration: none !important;
+            }
+
+            .btn-back:after {
+                content: '';
+                display: block;
+                margin: auto;
+                height: 1px;
+                width: 0px;
+                background: transparent;
+                transition: width .5s ease, background-color .5s ease;
+            }
+
+            .btn-back:hover:after {
+                width: 100%;
+                background: white;
+            }
+
+        .timer-text {
+            font-size: 14px;
+            margin: 6px 0;
+            display: block;
+            color: #3d9945;
+        }
+    </style>
+</head>
+<body id="LoginForm">
+    <form method="post" action="./Login.aspx?Rand=02%2f01%2f2019+11%3a41%3a08" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="ctl00_HiddenField" id="ctl00_HiddenField" value="" />
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="4ik2Hi7rGixWHUjGSktkOtxdCyVYztUwBr6UsqbBVzVB4PGY6PFBFORPdzBXNp2frLAPWmjli5jdCgbpnX1Z1IQihqDRW80e2BQDr2QKc1BK7hopzUtgd+QT6iv852SHbjwYvn4An6vD44CcDfTwrrGoEDb19PZDpcvLisayTWBKOkRYZ83JFJSdiBh3SWNd3fVC5erfp3qXA8okQZ/Hsg==" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=cUPKr_KXDrTdMSVx6onirwJcX_nky85OjoQeKgInf6NhT7CQjBCVXYgM-H_a0vwPF3Eo81f4SzPM44rBJMAG0zr-LIciQOP9f2atYe-aGAA1&amp;t=636765661264470882" type="text/javascript"></script>
+
+
+<script src="/ScriptResource.axd?d=0zQ4-J-MTiS0fnAw6s5HLc698qULTlEJKpiri1UEvmpyOR4cCaQzexuHtaqbGEHnWQncvZ3VR95JU_fvVPdvLmOm0EatajhI--CoW2xPdmIWCcj0Ylg1FX9ELQC_uT2W0&amp;t=60b7ac5d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=GC-W4CX-UCY_g7VFl7cjgKXrFUm5RKY5qHPpVqHle7C-4zraueX13hrcR7MCNEgDQDp0IXo10g_yIsNApim8mbUYWpwpKp-2vJJWR9C_rbVRvxboklLSRpuQFbkIqcxIDMwGzabi0HlRhNj4Sbx6WQ2&amp;t=60b7ac5d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=SFd4naguzMUCRxNT7BgSHXGw-rPigJYbKej5vMOehQ3bEC87R5YGQyC62K-Wfu_O5V57X1BaaRm8Ftxs0gPZ_hPslvuXs5_eI_ytLU75H2NmKsWmFik9j_kAhaRvtDRSI8xdwy1A45pl6tGDay6Raw2&amp;t=60b7ac5d" type="text/javascript"></script>
+<script src="/Login.aspx?_TSM_HiddenField_=ctl00_HiddenField&amp;_TSM_CombinedScripts_=%3b%3bAjaxControlToolkit%2c+Version%3d3.5.60919.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d28f01b0e84b6d53e%3aen-US%3a311bfa99-1d92-41d7-aace-73bb01d14bf6%3a475a4ef5%3aeffe2a26%3a1d3ed089%3a5546a2b%3a497ef277%3aa43b07eb%3ad2e10b12%3a37e2e5c9%3a751cdd15%3adfad98a5%3a3cf12cf1" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="C2EE9ABB" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/E3ef5kd8ZByCsGNU+Jp572jUUBGLj8XIrFmbadq5CeN4WO0zX3IXig0mr48Toag2qpcpaljQzEGQ6G00cgeB0oitjPxiLdIFBgDLPLuE/lxpsDvyzUZoNcQT5cpU/pHzi4ArH12zty7o1O5Ab4znXVSlIHuI5DJB4DsiZK/ZbPL9fGsy66F7/t2HjPH9PJ2QMu1kqC8R0ZXZlnm73TbAH5IxO3VElLlFCxO1CJwkfk4w6eIFJ6aj7fu3dscODJxJDUzfb9BITuxaq30ZeKWbOxzCAx+brGLkriraGQivUkeOcLYnHGk7Plx0Z5iKS5FZKLeZQOyAc2w7qYDJuH1AOFadbBwYKTeHXBs/waAI5k=" />
+</div>
+        <script type="text/javascript" src="Scripts/validation/ValidateLogin.js?key=02/01/2019 11:41:14"></script>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00', 'form1', ['tctl01','','tctl03','','tctl05','','tctl07','','tctl09','','tctl11','','tctl13','','tUpdatePanel4','','tUpdatePanel5',''], ['btnLogin','','lnkBtnSubmit',''], [], 90, '');
+//]]>
+</script>
+
+        
+        <!-- /header -->
+        <a id="lnkBtnBack" class="btn-back" href="javascript:__doPostBack(&#39;lnkBtnBack&#39;,&#39;&#39;)"><i class="fa fa-home"></i>&nbsp;Back to Home</a>
+        <div class="container">
+
+            <div class="login-form">
+                <div class="main-div">
+                    <div class="panel">
+                        <img src="logo.png" />
+                        <h2>Student Data Fill up</h2>
+                        <p>Please enter your Details</p>
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <input name="Name" type="text" id="txtUserId" class="form-control" placeholder="Enter your Full Name" required/>
+
+                    </div>
+		<div class="form-group">
+
+                        <input name="Address" type="text" id="txtUserId" class="form-control" placeholder="Your Address" required/>
+
+                    </div>
+		<div class="form-group">
+
+                        <input name="phone" type="number" id="txtUserId" class="form-control" placeholder="Phone Number" required/>
+
+                    </div>
+		<div class="form-group">
+
+                        <input name="email" type="email" id="txtUserId" class="form-control" placeholder="Email Address" required/>
+
+                    </div>
+		   <div class="form-group">
+
+                        <input name="txtUserId" type="text" id="txtUserId" class="form-control" placeholder="User Id" required/>
+
+                    </div>
+
+                    <div class="form-group">
+                        <input name="txtPassword" type="password" id="txtPassword" class="form-control" placeholder="password" />
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <span id="lblCaptcha" style="color: #777777; font-size: 14px; margin-bottom: 10px; margin-top: 10px; display: block; line-height: 24px;">Please enter the result of the image</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6" style="padding-right: 6px;">
+                                <div id="ctl01">
+	
+                                        
+                                    
+</div>
+                                <div id="ctl03">
+	
+                                        <img id="imgCaptcha" src="13.jpg" alt="Image not found" style="width: 100%;" />
+                                        <input type="hidden" name="hdnCaptchaValue" id="hdnCaptchaValue" value="16" />
+                                    
+</div>
+                            </div>
+                            <div class="col-md-6" style="padding-left: 6px;">
+                                <div id="ctl05">
+	
+                                        <input name="txtCaptcha" type="text" id="txtCaptcha" class="form-control" placeholder="Enter Captcha" style="height: 36px; line-height: 36px;" />
+                                    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <input type="submit" name="btnLogin" value="Login" onclick="return ValidateLogin();" id="btnLogin" class="btn btn-primary" />
+                    <div class="forgot">
+                        <a href="#">Forgot password?</a>
+                    </div>
+                    <div id="ctl07">
+	
+                            <span id="lblErrorMsg" class="error-msg"></span>
+                        
+</div>
+
+
+                </div>
+
+            </div>
+        </div>
+        <input type="submit" name="btn" value="" id="btn" style="display: none; background-color: green; width: 100%" />
+        
+        <div id="Panel1" class="modalPopup" align="center" style="display: none">
+	
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a id="btnClose" class="close" href="javascript:__doPostBack(&#39;btnClose&#39;,&#39;&#39;)" style="color:White;">&times;</a>
+                    <h4 class="modal-title">Enter OTP</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="ctl09">
+		
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <span id="lblOTPMSG"></span>
+                                </div>
+                                <div class="col-md-12">
+                                    <input name="txtOTP" type="text" id="txtOTP" class="form-control" placeholder="Enter OTP..." />
+                                </div>
+
+                                <div id="timerBlock" class="col-md-8">
+                                    <div id="ctl11">
+			
+                                            <span id="lblTimeRemaining" class="timer-text"></span>
+
+                                        
+		</div>
+
+                                </div>
+                                <div class="col-md-8">
+                                    
+                                    <div id="ctl13">
+			
+                                            <span id="Timer1" style="visibility:hidden;display:none;"></span>
+
+                                        
+		</div>
+                                </div>
+
+                            </div>
+                        
+	</div>
+
+                    <div id="UpdatePanel4">
+		
+                            <span id="lblPopMessage" class="error-msg" style="text-align:left"></span>
+                        
+	</div>
+
+                </div>
+                <div class="modal-footer">
+                    <div id="UpdatePanel5">
+		
+                            <a onclick="return ValidateOTP();" id="lnkBtnSubmit" class="modal-btn" href="javascript:__doPostBack(&#39;lnkBtnSubmit&#39;,&#39;&#39;)">Submit</a>
+                            <a id="lnkBtnClose" class="modal-btn" href="javascript:__doPostBack(&#39;lnkBtnClose&#39;,&#39;&#39;)" style="background: #dd4b39 !important">Close</a>
+                        
+	</div>
+
+                </div>
+            </div>
+
+        
+</div>
+        <div class="footer">
+            <strong>Copyright &copy; 2018 <a href="https://WWW.Google.com/">Saif Ali</a> All rights reserved.</strong>
+        </div>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {var fn = function() {$get("ctl00_HiddenField").value = '';Sys.Application.remove_init(fn);};Sys.Application.add_init(fn);})();Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.ModalPopupBehavior, {"BackgroundCssClass":"modalBackground","CancelControlID":"btnClose","OnHiding":"{\"AnimationName\":\"Fadeout\",\"Duration\":\"0.1\",\"AnimationChildren\":[]}","OnShown":"{\"AnimationName\":\"Fadein\",\"Duration\":\"0.1\",\"AnimationChildren\":[]}","PopupControlID":"Panel1","dynamicServicePath":"/Login.aspx","id":"mp1"}, null, null, $get("btn"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.UI._Timer, {"enabled":true,"interval":60000,"uniqueID":"Timer1"}, null, null, $get("Timer1"));
+});
+//]]>
+</script>
+</form>
+    
+    <script src="Scripts/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+
+        function startTimer() {
+            var timeLeft = 60;
+            var elem = document.getElementById('lblTimeRemaining');
+                var timerId = setInterval(countdown, 1000);
+
+                function countdown() {
+                    if (timeLeft == -1) {
+                        clearTimeout(timerId);
+                        doSomething();
+                    } else {
+                        elem.innerHTML = timeLeft + ' seconds remaining';
+                        timeLeft--;
+                    }
+                }
+            }
+
+            function doSomething() {
+
+            }
+
+
+            var prm = Sys.WebForms.PageRequestManager.getInstance();
+
+            prm.add_endRequest(function () {
+                function startTimer() {
+                    var timeLeft = 60;
+                    var elem = document.getElementById('lblTimeRemaining');
+                    var timerId = setInterval(countdown, 1000);
+
+                    function countdown() {
+                        if (timeLeft == -1) {
+                            clearTimeout(timerId);
+                            doSomething();
+                        } else {
+                            elem.innerHTML = timeLeft + ' seconds remaining';
+                            timeLeft--;
+                        }
+                    }
+                }
+
+                function doSomething() {
+
+                }
+            });
+
+    </script>
+</body>
+
+</html>
+

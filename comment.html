@@ -1,0 +1,40 @@
+<html>
+<body bgcolor="white">
+<marquee scrollamount="30"><font size="10" color="green" face="Lucida Calligraphy"><u>Application for World Environment Day(W.E.D.)</u></font></marquee><br>
+<img src="world_environment_day_chicago_.jpg" width="500" height="400">
+<script Language="javascript">
+function saveToExcel()
+{
+var myApp = new ActiveXObject("Excel.Application");
+myApp.visible = true;
+var xlCellTypeLastCell = 11;
+var myWorkbook = myApp.Workbooks.Open(C:\Users\SAIF\Desktop\Saif Ali 10D201606\Saif.xlsx);
+var myWorksheet = myWorkbook.Worksheets(1);
+myWorksheet.Activate;
+objRange = myWorksheet.UsedRange;
+objRange.SpecialCells(xlCellTypeLastCell).Activate ;
+newRow = myApp.ActiveCell.Row + 1;
+alert('newRow : '+newRow);
+strNewCell = "A" + newRow;
+alert('strNewCell : '+ strNewCell);
+myApp.Range(strNewCell).Activate;
+myWorksheet.Cells(newRow,1).value = frm.txt1.value;
+myWorksheet.Cells(newRow,2).value = frm.email.value;
+myWorksheet.Cells(newRow,3).value = frm.addr.value;
+myWorksheet.Cells(newRow,4).value = frm.comment.value;
+myWorkbook.Close(true);
+myApp.Workbooks.Close;
+myApp.Close;
+alert('Data successfully saved');
+}
+</SCRIPT>
+<form name="frm" onsubmit="saceToExcel()">
+<b>Your Name:-<input type="text" name="txt1" placeholder="Enter your name" required><br>
+Address:-<textarea rows="5" cols="30" name=addr></textarea><br>
+E-mail:-<input type="email" name="email"><br><br>
+Comments:-<textarea rows="5" cols="30" name=comment></textarea>
+</b>
+<input type="submit" name="btn" value="Send">
+</form>
+</body>
+</html>
